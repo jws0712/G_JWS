@@ -24,34 +24,40 @@ public class MaainUiCon : MonoBehaviour
     void Store()
     {
         Menu[0].gameObject.SetActive(true);
-        Menu[1].gameObject.SetActive(false);
-        Menu[2].gameObject.SetActive(false);
-        Menu[3].gameObject.SetActive(false);
-
+        CheckMenu(0);
     }
 
     void Exercise()
     {
         Menu[1].gameObject.SetActive(true);
-        Menu[0].gameObject.SetActive(false);
-        Menu[2].gameObject.SetActive(false);
-        Menu[3].gameObject.SetActive(false);
+        CheckMenu(1);
+
 
     }
 
     void Fight()
     {
         Menu[2].gameObject.SetActive(true);
-        Menu[0].gameObject.SetActive(false);
-        Menu[1].gameObject.SetActive(false);
-        Menu[3].gameObject.SetActive(false);
+        CheckMenu(2);
+
     }
 
     void Setting()
     {
         Menu[3].gameObject.SetActive(true);
-        Menu[0].gameObject.SetActive(false);
-        Menu[2].gameObject.SetActive(false);
-        Menu[1].gameObject.SetActive(false);
+        CheckMenu(3);
+
+    }
+
+    void CheckMenu(int ThisMenu)
+    {
+        for(int i = 0; i <= 3; i++)
+        {
+            if(i != ThisMenu)
+            {
+                Menu[i].gameObject.SetActive(false);
+            }
+            
+        }
     }
 }
