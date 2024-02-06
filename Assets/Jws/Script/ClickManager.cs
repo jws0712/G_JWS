@@ -26,7 +26,6 @@ public class ClickManager : MonoBehaviour
 
             if (hit.collider != null && hit.collider.CompareTag("ClickZone"))
             {
-                Debug.Log("Å¬¸¯!");
                 StartCoroutine(Effect());
             }
             
@@ -36,9 +35,13 @@ public class ClickManager : MonoBehaviour
     IEnumerator Effect()
     {
         Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         clickPosition.z = 0;
+
         GameObject ClickEffect = Instantiate(CEffect, clickPosition, Quaternion.identity);
+
         yield return new WaitForSeconds(0.2f);
+
         Destroy(ClickEffect);
     }
 }
