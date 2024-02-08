@@ -15,6 +15,7 @@ public class MaainUiCon : MonoBehaviour
 
     void Start()
     {
+        SoundManager.instance.PlayMusic("Music");
         StoreButton.onClick.AddListener(Store);
         ExerciseButton.onClick.AddListener(Exercise);
         FightButton.onClick.AddListener(Fight);
@@ -24,12 +25,16 @@ public class MaainUiCon : MonoBehaviour
     void Store()
     {
         Menu[0].gameObject.SetActive(true);
+        SoundManager.instance.PanelOnOff(false);
+
         CheckMenu(0);
     }
 
     void Exercise()
     {
         Menu[1].gameObject.SetActive(true);
+        SoundManager.instance.PanelOnOff(false);
+
         CheckMenu(1);
 
 
@@ -38,14 +43,18 @@ public class MaainUiCon : MonoBehaviour
     void Fight()
     {
         Menu[2].gameObject.SetActive(true);
+        SoundManager.instance.PanelOnOff(false);
+
         CheckMenu(2);
 
     }
 
     void Setting()
     {
+        SoundManager.instance.PanelOnOff(true);
         Menu[3].gameObject.SetActive(true);
         CheckMenu(3);
+
 
     }
 
