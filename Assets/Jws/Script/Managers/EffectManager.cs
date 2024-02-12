@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static EffectManager instance { get; private set; }
+
+    public bool IsEffect;
+
+    public GameObject ToggleEffectPanel;
+
+    public void Awake()
     {
-        
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        IsEffect = true;
+    }
+    public void On()
+    {
+        IsEffect = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Off()
     {
-        
+        IsEffect = false;
+    }
+
+    public void PanelOnOff(bool type)
+    {
+        ToggleEffectPanel.SetActive(type);
     }
 }

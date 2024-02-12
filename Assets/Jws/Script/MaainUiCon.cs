@@ -26,6 +26,7 @@ public class MaainUiCon : MonoBehaviour
     {
         Menu[0].gameObject.SetActive(true);
         SoundManager.instance.PanelOnOff(false);
+        EffectManager.instance.PanelOnOff(false);
 
         CheckMenu(0);
     }
@@ -34,6 +35,8 @@ public class MaainUiCon : MonoBehaviour
     {
         Menu[1].gameObject.SetActive(true);
         SoundManager.instance.PanelOnOff(false);
+        EffectManager.instance.PanelOnOff(false);
+
 
         CheckMenu(1);
 
@@ -44,6 +47,8 @@ public class MaainUiCon : MonoBehaviour
     {
         Menu[2].gameObject.SetActive(true);
         SoundManager.instance.PanelOnOff(false);
+        EffectManager.instance.PanelOnOff(false);
+
 
         CheckMenu(2);
 
@@ -52,6 +57,8 @@ public class MaainUiCon : MonoBehaviour
     void Setting()
     {
         SoundManager.instance.PanelOnOff(true);
+        EffectManager.instance.PanelOnOff(false);
+
         Menu[3].gameObject.SetActive(true);
         CheckMenu(3);
 

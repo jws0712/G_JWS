@@ -6,6 +6,9 @@ public class ClickManager : MonoBehaviour
 {
     public GameObject CEffect;
 
+
+    public int Socre;
+
     
 
     // Start is called before the first frame update
@@ -27,6 +30,9 @@ public class ClickManager : MonoBehaviour
             if (hit.collider != null && hit.collider.CompareTag("ClickZone"))
             {
                 StartCoroutine(Effect());
+
+                Socre++;
+                Debug.Log(Socre + "Á¡");
             }
             
         }
@@ -40,10 +46,16 @@ public class ClickManager : MonoBehaviour
 
         SoundManager.instance.PlaySFX("ClickSFX");
 
-        GameObject ClickEffect = Instantiate(CEffect, clickPosition, Quaternion.identity);
+        if(EffectManager.instance.IsEffect == true)
+        {
+            GameObject ClickEffect = Instantiate(CEffect, clickPosition, Quaternion.identity);
 
-        yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.2f);
 
-        Destroy(ClickEffect);
+            Destroy(ClickEffect);
+        }
+        
+
+
     }
 }
