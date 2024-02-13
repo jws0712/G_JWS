@@ -57,7 +57,7 @@ public class MaainUiCon : MonoBehaviour
     void Setting()
     {
         SoundManager.instance.PanelOnOff(true);
-        EffectManager.instance.PanelOnOff(false);
+        EffectManager.instance.PanelOnOff(true);
 
         Menu[3].gameObject.SetActive(true);
         CheckMenu(3);
